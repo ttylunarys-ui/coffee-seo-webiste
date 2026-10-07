@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ttylunarys-ui.github.io/coffee-seo-website/sitemap.xml
