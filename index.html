@@ -4,54 +4,205 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Coffee Guide | Coffee & Coffee Gear</title>
+  <title>Coffee & Coffee Gear | Coffee Guides & Tips</title>
 
-  <meta name="description" content="Explore coffee brewing guides, coffee gear, and practical tips for coffee beginners.">
+  <meta name="description" content="Explore simple coffee guides, brewing tips, and coffee gear recommendations for beginners.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background: #f7f4ef;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #3b2a20;
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 80px 8%;
+      background: #e9dfd2;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      color: #3b2a20;
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 22px;
+      background: #3b2a20;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .section {
+      padding: 50px 8%;
+    }
+
+    .section h2 {
+      color: #3b2a20;
+      font-size: 30px;
+    }
+
+    .cards {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      flex: 1;
+      min-width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      color: #3b2a20;
+    }
+
+    .card a {
+      color: #7a4b2a;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #3b2a20;
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Coffee & Coffee Gear</h1>
-    <p>Your simple guide to better coffee.</p>
-  </header>
+<header>
+  <div class="logo">☕ Coffee & Coffee Gear</div>
 
-  <main>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="how-to-make-pour-over-coffee.html">Coffee Guides</a>
+  </nav>
+</header>
 
-    <section>
-      <h2>Coffee Guides</h2>
-      <p>
-  <a href="how-to-make-pour-over-coffee.html">
-    How to Make Pour Over Coffee
+
+<section class="hero">
+
+  <h1>Better Coffee Starts Here.</h1>
+
+  <p>
+    Simple coffee guides, brewing tips, and practical coffee gear
+    recommendations for beginners.
+  </p>
+
+  <a class="button" href="how-to-make-pour-over-coffee.html">
+    Explore Coffee Guides
   </a>
-</p>
-      <p>
-        Learn how to brew coffee, choose coffee beans,
-        and improve your coffee-making skills.
-      </p>
-    </section>
 
-    <section>
-      <h2>Coffee Gear</h2>
+</section>
+
+
+<section class="section">
+
+  <h2>Explore Our Guides</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>☕ Coffee Guides</h3>
+
+      <p>
+        Learn simple coffee brewing methods and improve your
+        coffee-making skills.
+      </p>
+
+      <a href="how-to-make-pour-over-coffee.html">
+        Read the Guide →
+      </a>
+    </div>
+
+
+    <div class="card">
+
+      <h3>⚙️ Coffee Gear</h3>
+
       <p>
         Discover coffee mugs, grinders, coffee makers,
-        and other useful coffee equipment.
+        and other useful equipment.
       </p>
-    </section>
 
-    <section>
-      <h2>Coffee Tips</h2>
+      <a href="#">
+        Explore Gear →
+      </a>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>💡 Coffee Tips</h3>
+
       <p>
-        Find practical tips about coffee storage,
-        brewing temperature, and coffee preparation.
+        Practical tips about coffee storage, brewing,
+        and everyday coffee preparation.
       </p>
-    </section>
 
-  </main>
+      <a href="#">
+        View Tips →
+      </a>
 
-  <footer>
-    <p>© 2026 Coffee & Coffee Gear</p>
-  </footer>
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <p>© 2026 Coffee & Coffee Gear</p>
+
+</footer>
 
 </body>
 </html>
