@@ -1,210 +1,564 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Coffee & Coffee Gear | Coffee Guides & Tips</title>
+  <title>Coffee & Coffee Gear | Brewing Guides for Beginners</title>
+  <meta name="description" content="Learn how to brew better coffee, choose useful coffee gear, and store coffee beans properly with simple, practical guides for beginners.">
+  <meta name="theme-color" content="#3b2a20">
 
-  <meta name="description" content="Explore simple coffee guides, brewing tips, and coffee gear recommendations for beginners.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <style>
+    :root {
+      --brown: #3b2a20;
+      --brown-light: #68432e;
+      --accent: #a66a3f;
+      --cream: #f7f3ed;
+      --paper: #fffdf9;
+      --text: #342d28;
+      --muted: #71675f;
+      --border: #e8ded2;
+      --max-width: 1160px;
+    }
+
     * {
       box-sizing: border-box;
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #333;
-      background: #f7f4ef;
-      line-height: 1.6;
+    html {
+      scroll-behavior: smooth;
     }
 
-    header {
-      background: #3b2a20;
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(100% - 40px, var(--max-width));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      background: var(--brown);
       color: white;
-      padding: 20px 8%;
+    }
+
+    .header-inner {
+      min-height: 82px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 24px;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    nav a {
+    .brand {
       color: white;
       text-decoration: none;
-      margin-left: 25px;
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: bold;
+      line-height: 1.3;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .brand small {
+      display: block;
+      margin-top: 4px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      color: #e0cbb9;
+      letter-spacing: 0.5px;
+    }
+
+    .main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .main-nav a {
+      color: #f7eee7;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .main-nav a:hover,
+    .main-nav a[aria-current="page"] {
+      color: #e7b98f;
     }
 
     .hero {
-      padding: 80px 8%;
-      background: #e9dfd2;
+      background:
+        linear-gradient(90deg,
+          rgba(247, 239, 228, 0.98) 0%,
+          rgba(247, 239, 228, 0.91) 48%,
+          rgba(247, 239, 228, 0.2) 100%),
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=85")
+        center 52% / cover no-repeat;
     }
 
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 15px;
-      color: #3b2a20;
+    .hero-inner {
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      padding-block: 72px;
     }
 
-    .hero p {
-      max-width: 600px;
+    .hero-content {
+      max-width: 590px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.25;
+    }
+
+    h1 {
+      max-width: 570px;
+      margin: 0 0 18px;
+      color: var(--brown);
+      font-size: clamp(38px, 5vw, 58px);
+      letter-spacing: -1.2px;
+    }
+
+    .hero-description {
+      max-width: 510px;
+      margin: 0;
+      color: #51463e;
       font-size: 18px;
     }
 
     .button {
       display: inline-block;
-      margin-top: 15px;
+      margin-top: 26px;
       padding: 12px 22px;
-      background: #3b2a20;
+      border: 1px solid var(--brown);
+      border-radius: 5px;
+      background: var(--brown);
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--brown-light);
     }
 
     .section {
-      padding: 50px 8%;
+      padding-block: 64px;
     }
 
-    .section h2 {
-      color: #3b2a20;
-      font-size: 30px;
+    .section-heading {
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 10px;
+      color: var(--brown);
+      font-size: clamp(29px, 3vw, 36px);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
     }
 
     .cards {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
     }
 
     .card {
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      flex: 1;
-      min-width: 250px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--paper);
+      box-shadow: 0 5px 18px rgba(59, 42, 32, 0.045);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(59, 42, 32, 0.1);
+    }
+
+    .card-image {
+      display: block;
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      background: #e7dbce;
+    }
+
+    .card-body {
+      padding: 23px;
     }
 
     .card h3 {
-      color: #3b2a20;
+      margin: 0 0 10px;
+      color: var(--brown);
+      font-size: 23px;
     }
 
-    .card a {
-      color: #7a4b2a;
+    .card p {
+      margin: 0 0 17px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .text-link {
+      color: #82491f;
+      font-size: 14px;
       font-weight: bold;
       text-decoration: none;
     }
 
-    footer {
+    .text-link:hover {
+      text-decoration: underline;
+    }
+
+    .featured-section {
+      padding-top: 10px;
+      padding-bottom: 72px;
+    }
+
+    .featured-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .featured-item {
+      padding: 22px 24px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    .featured-item h3 {
+      margin: 0 0 8px;
+      color: var(--brown);
+      font-size: 21px;
+    }
+
+    .featured-item p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .site-footer {
+      padding: 36px 0 18px;
+      background: var(--brown);
+      color: #f6eee7;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding-bottom: 25px;
+    }
+
+    .footer-brand {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .footer-brand small {
+      display: block;
+      color: #d8c5b6;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-nav a {
+      color: #f6eee7;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: #e7b98f;
+    }
+
+    .copyright {
+      margin: 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      color: #d8c5b6;
+      font-size: 12px;
       text-align: center;
-      padding: 30px;
-      background: #3b2a20;
-      color: white;
+    }
+
+    @media (max-width: 760px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-block: 20px;
+        gap: 16px;
+      }
+
+      .main-nav {
+        gap: 12px 18px;
+      }
+
+      .hero {
+        background:
+          linear-gradient(rgba(247,239,228,0.92),
+                          rgba(247,239,228,0.88)),
+          url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=80")
+          center / cover no-repeat;
+      }
+
+      .hero-inner {
+        min-height: 360px;
+        padding-block: 55px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card-image {
+        height: 220px;
+      }
+
+      .featured-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding-block: 46px;
+      }
+
+      .footer-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
 
 <body>
-
-<header>
-  <div class="logo">☕ Coffee & Coffee Gear</div>
-
-  <nav>
-  <a href="index.html">Home</a>
-  <a href="how-to-make-pour-over-coffee.html">Coffee Guides</a>
-  <a href="coffee-gear.html">Coffee Gear</a>
-  <a href="coffee-tips.html">Coffee Tips</a>
-</nav>
-</header>
-
-
-<section class="hero">
-
-  <h1>Better Coffee Starts Here.</h1>
-
-  <p>
-    Simple coffee guides, brewing tips, and practical coffee gear
-    recommendations for beginners.
-  </p>
-
-  <a class="button" href="how-to-make-pour-over-coffee.html">
-    Explore Coffee Guides
-  </a>
-
-</section>
-
-
-<section class="section">
-
-  <h2>Explore Our Guides</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <h3>☕ Coffee Guides</h3>
-
-      <p>
-        Learn simple coffee brewing methods and improve your
-        coffee-making skills.
-      </p>
-
-      <a href="how-to-make-pour-over-coffee.html">
-        Read the Guide →
-      </a>
-    </div>
-
-
-    <div class="card">
-
-      <h3>⚙️ Coffee Gear</h3>
-
-      <p>
-        Discover coffee mugs, grinders, coffee makers,
-        and other useful equipment.
-      </p>
-
-      <a href="coffee-gear.html">
-        Explore Gear →
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Coffee & Coffee Gear home">
+        ☕ Coffee & Coffee Gear
+        <small>Better Coffee. A Brighter Day.</small>
       </a>
 
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="how-to-make-pour-over-coffee.html">Coffee Guides</a>
+        <a href="coffee-gear.html">Coffee Gear</a>
+        <a href="coffee-tips.html">Coffee Tips</a>
+      </nav>
     </div>
+  </header>
 
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">Coffee Guides / Gear / Tips</p>
+          <h1>Better Coffee Starts Here.</h1>
+          <p class="hero-description">
+            Learn how to brew better coffee, choose useful equipment,
+            and build a better coffee routine with simple guides for beginners.
+          </p>
+          <a class="button" href="how-to-make-pour-over-coffee.html">
+            Explore Coffee Guides →
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <div class="card">
+    <section class="section" aria-labelledby="guides-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Start Exploring</p>
+          <h2 id="guides-heading">Explore Our Coffee Guides</h2>
+          <p>
+            From brewing basics to practical equipment advice,
+            find straightforward answers to everyday coffee questions.
+          </p>
+        </div>
 
-      <h3>💡 Coffee Tips</h3>
+        <div class="cards">
+          <article class="card">
+            <img
+              class="card-image"
+              src="https://images.unsplash.com/photo-1517256673644-36ad11246d21?auto=format&fit=crop&w=800&q=80"
+              alt="Pour-over coffee being prepared in a glass coffee maker"
+              loading="lazy"
+              width="800"
+              height="500"
+            >
+            <div class="card-body">
+              <h3>Coffee Guides</h3>
+              <p>
+                Learn brewing methods, coffee ratios, and beginner-friendly
+                techniques for a better cup at home.
+              </p>
+              <a class="text-link" href="how-to-make-pour-over-coffee.html">
+                Read the Guide →
+              </a>
+            </div>
+          </article>
 
-      <p>
-        Practical tips about coffee storage, brewing,
-        and everyday coffee preparation.
+          <article class="card">
+            <img
+              class="card-image"
+              src="https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?auto=format&fit=crop&w=800&q=80"
+              alt="Coffee brewing equipment arranged on a table"
+              loading="lazy"
+              width="800"
+              height="500"
+            >
+            <div class="card-body">
+              <h3>Coffee Gear</h3>
+              <p>
+                Understand coffee makers, grinders, mugs, and the equipment
+                worth considering before you buy.
+              </p>
+              <a class="text-link" href="coffee-gear.html">
+                Explore Coffee Gear →
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img
+              class="card-image"
+              src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=80"
+              alt="Coffee beans and coffee-making essentials"
+              loading="lazy"
+              width="800"
+              height="500"
+            >
+            <div class="card-body">
+              <h3>Coffee Tips</h3>
+              <p>
+                Get practical advice on storing coffee beans, keeping coffee
+                fresh, and improving your daily routine.
+              </p>
+              <a class="text-link" href="coffee-tips.html">
+                Discover Coffee Tips →
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section featured-section" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Practical Advice</p>
+          <h2 id="featured-heading">Learn Something New Today</h2>
+          <p>
+            Explore useful topics for making, choosing, and enjoying coffee.
+          </p>
+        </div>
+
+        <div class="featured-list">
+          <article class="featured-item">
+            <h3>How to Make Pour-Over Coffee</h3>
+            <p>
+              Follow a beginner-friendly process and learn how grind size,
+              water, and coffee ratio affect your brew.
+            </p>
+            <a class="text-link" href="how-to-make-pour-over-coffee.html">
+              Follow the Brewing Guide →
+            </a>
+          </article>
+
+          <article class="featured-item">
+            <h3>How to Store Coffee Beans</h3>
+            <p>
+              Learn the basics of protecting coffee beans from air, moisture,
+              heat, and light.
+            </p>
+            <a class="text-link" href="coffee-tips.html">
+              Read Our Coffee Tips →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          ☕ Coffee & Coffee Gear
+          <small>Simple guides for better coffee.</small>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="how-to-make-pour-over-coffee.html">Coffee Guides</a>
+          <a href="coffee-gear.html">Coffee Gear</a>
+          <a href="coffee-tips.html">Coffee Tips</a>
+        </nav>
+      </div>
+
+      <p class="copyright">
+        © 2026 Coffee & Coffee Gear. All rights reserved.
       </p>
-
-      <a href="coffee-tips.html">
-        View Tips →
-      </a>
-
     </div>
-
-  </div>
-
-</section>
-
-
-<footer>
-
-  <p>© 2026 Coffee & Coffee Gear</p>
-
-</footer>
-
+  </footer>
 </body>
 </html>
