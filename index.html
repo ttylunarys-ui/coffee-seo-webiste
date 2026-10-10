@@ -1,634 +1,803 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Coffee & Coffee Gear | Practical Guides for Better Coffee</title>
-  <meta name="description" content="Explore practical coffee brewing guides, coffee equipment advice, and troubleshooting tips to make better coffee at home.">
-  <meta name="robots" content="index, follow">
+  <title>Coffee & Coffee Gear | Better Coffee at Home</title>
+  <meta name="description" content="Explore practical coffee brewing guides, equipment recommendations, and expert tips to make better coffee at home.">
   <link rel="canonical" href="https://ttylunarys-ui.github.io/coffee-seo-webiste/index.html">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Coffee & Coffee Gear">
-  <meta property="og:description" content="Practical guides to brewing coffee, choosing equipment, and improving your daily cup.">
-  <meta property="og:url" content="https://ttylunarys-ui.github.io/coffee-seo-webiste/index.html">
-  <meta name="theme-color" content="#f8f7f3">
+  <meta name="theme-color" content="#f8f5ef">
 
   <style>
-    /* 1. Design tokens */
-    @layer reset, base, layout, components, utilities;
+    :root {
+      --bg: #faf8f4;
+      --surface: #ffffff;
+      --ink: #252622;
+      --muted: #62615c;
+      --coffee: #79513d;
+      --coffee-dark: #56392b;
+      --line: #e8e1d8;
+      --radius: 14px;
+      --page-width: 1240px;
+    }
 
-    @layer reset {
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
+    * {
+      box-sizing: border-box;
+    }
 
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 90px;
-      }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-      body,
-      h1,
-      h2,
-      h3,
-      p {
-        margin: 0;
-      }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      font-size: 19px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-      img {
-        display: block;
-        max-width: 100%;
-      }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-      button,
-      input {
-        font: inherit;
+    a:focus-visible {
+      outline: 3px solid var(--coffee);
+      outline-offset: 4px;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(var(--page-width), calc(100% - 64px));
+      margin-inline: auto;
+    }
+
+    /* Header */
+
+    .site-header {
+      position: relative;
+      z-index: 10;
+      background: rgba(250, 248, 244, 0.97);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid var(--coffee);
+      border-radius: 50%;
+      color: var(--coffee);
+      font-size: 25px;
+    }
+
+    .brand-name {
+      display: block;
+      font-size: 19px;
+      line-height: 1.3;
+      font-weight: 750;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-tagline {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3vw, 44px);
+    }
+
+    .main-nav a {
+      position: relative;
+      padding: 12px 0;
+      font-size: 17px;
+      font-weight: 550;
+      white-space: nowrap;
+    }
+
+    .main-nav a::after {
+      position: absolute;
+      right: 0;
+      bottom: 4px;
+      left: 0;
+      height: 2px;
+      background: var(--coffee);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 180ms ease;
+    }
+
+    .main-nav a:hover::after,
+    .main-nav a[aria-current="page"]::after {
+      transform: scaleX(1);
+    }
+
+    /* Main visual */
+
+    .hero {
+      position: relative;
+      min-height: 490px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #d6c8b6;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(249, 245, 237, 0.98) 0%,
+          rgba(249, 245, 237, 0.91) 33%,
+          rgba(249, 245, 237, 0.52) 52%,
+          rgba(249, 245, 237, 0.02) 76%
+        ),
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2000&q=85");
+      background-position: center, center 52%;
+      background-size: cover;
+      content: "";
+      transform: scale(1.01);
+    }
+
+    .hero-content {
+      width: min(650px, 64%);
+      padding-block: 74px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--coffee);
+      font-size: 15px;
+      font-weight: 750;
+      letter-spacing: 2.4px;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      margin: 0;
+      font-size: clamp(44px, 5.4vw, 72px);
+      font-weight: 780;
+      letter-spacing: -2.8px;
+      line-height: 1.08;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--coffee);
+    }
+
+    .hero-description {
+      max-width: 510px;
+      margin: 24px 0 28px;
+      color: #41403b;
+      font-size: 21px;
+      line-height: 1.75;
+    }
+
+    .button {
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 13px 25px;
+      border: 1px solid var(--coffee);
+      border-radius: 999px;
+      background: var(--coffee);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 650;
+      transition: background 180ms ease, transform 180ms ease;
+    }
+
+    .button:hover {
+      background: var(--coffee-dark);
+      transform: translateY(-2px);
+    }
+
+    .button .arrow {
+      font-size: 21px;
+      line-height: 1;
+    }
+
+    /* Three image cards */
+
+    .featured {
+      padding-block: 34px 66px;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .feature-card {
+      position: relative;
+      min-height: 360px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #5c4a3b;
+      isolation: isolate;
+    }
+
+    .feature-card img {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      transition: transform 450ms ease;
+    }
+
+    .feature-card::after {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(20, 18, 15, 0.02) 5%,
+        rgba(20, 18, 15, 0.22) 35%,
+        rgba(20, 18, 15, 0.86) 100%
+      );
+      content: "";
+    }
+
+    .feature-card:hover img {
+      transform: scale(1.045);
+    }
+
+    .feature-content {
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 27px;
+      color: white;
+    }
+
+    .card-label {
+      margin: 0 0 11px;
+      color: #f3dfcc;
+      font-size: 14px;
+      font-weight: 750;
+      letter-spacing: 1.8px;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .feature-card h2 {
+      margin: 0;
+      font-size: clamp(24px, 2.2vw, 30px);
+      font-weight: 750;
+      letter-spacing: -0.7px;
+      line-height: 1.25;
+    }
+
+    .feature-card p:not(.card-label) {
+      margin: 13px 0 18px;
+      color: #f7f3ee;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .text-link {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .text-link span {
+      transition: transform 180ms ease;
+    }
+
+    .text-link:hover span {
+      transform: translateX(4px);
+    }
+
+    /* Latest guides */
+
+    .latest {
+      padding-block: 62px 68px;
+      border-top: 1px solid var(--line);
+    }
+
+    .latest-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(38px, 7vw, 95px);
+      align-items: start;
+    }
+
+    .section-label {
+      margin: 0 0 13px;
+      color: var(--coffee);
+      font-size: 14px;
+      font-weight: 750;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-heading {
+      margin: 0;
+      font-size: clamp(32px, 3.4vw, 43px);
+      font-weight: 760;
+      letter-spacing: -1.4px;
+      line-height: 1.2;
+    }
+
+    .section-description {
+      margin: 18px 0 24px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    .latest-list {
+      display: grid;
+    }
+
+    .latest-item {
+      display: grid;
+      grid-template-columns: 116px minmax(0, 1fr) 24px;
+      gap: 19px;
+      align-items: center;
+      padding: 0 0 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .latest-item + .latest-item {
+      padding-top: 20px;
+    }
+
+    .latest-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .latest-image {
+      width: 116px;
+      height: 100px;
+      overflow: hidden;
+      border-radius: 9px;
+      background: #e7ded2;
+    }
+
+    .latest-image img {
+      transition: transform 300ms ease;
+    }
+
+    .latest-item:hover .latest-image img {
+      transform: scale(1.05);
+    }
+
+    .latest-category {
+      margin: 0 0 5px;
+      color: var(--coffee);
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .latest-item h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .latest-arrow {
+      font-size: 24px;
+      transition: transform 180ms ease;
+    }
+
+    .latest-item:hover .latest-arrow {
+      transform: translateX(4px);
+    }
+
+    /* Helpful tip banner */
+
+    .tip-banner {
+      margin-bottom: 62px;
+      padding: 28px 34px;
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      border: 1px solid #eae1d5;
+      border-radius: var(--radius);
+      background: #f1ebe2;
+    }
+
+    .tip-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #bda38c;
+      border-radius: 50%;
+      color: var(--coffee);
+      font-size: 27px;
+    }
+
+    .tip-banner .section-label {
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+
+    .tip-banner h2 {
+      margin: 0;
+      font-size: 27px;
+      line-height: 1.35;
+      letter-spacing: -0.6px;
+    }
+
+    .tip-banner p:not(.section-label) {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--coffee-dark);
+    }
+
+    .button-outline:hover {
+      color: #fff;
+    }
+
+    /* Footer */
+
+    .site-footer {
+      padding-block: 28px 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-nav a {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .footer-nav a:hover {
+      color: var(--coffee);
+    }
+
+    .copyright {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      text-align: center;
+    }
+
+    @media (min-width: 1500px) {
+      .hero {
+        min-height: 530px;
       }
     }
 
-    @layer base {
-      :root {
-        color-scheme: light;
-
-        --page: #f8f7f3;
-        --surface: #ffffff;
-        --surface-soft: #f0eee7;
-        --text: #252720;
-        --muted: #686b63;
-        --accent: #70513b;
-        --accent-hover: #503725;
-        --line: #e2e0d7;
-        --success: #53684c;
-
-        --font-body: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-        --content-width: 1120px;
-        --page-gutter: clamp(20px, 4vw, 48px);
-
-        --text-small: 0.875rem;
-        --text-body: clamp(1.0625rem, 1rem + 0.15vw, 1.1875rem);
-        --heading-xl: clamp(2.5rem, 5vw, 4.25rem);
-        --heading-lg: clamp(1.8rem, 3vw, 2.5rem);
-
-        --radius: 8px;
-      }
-
-      body {
-        min-width: 320px;
-        background: var(--page);
-        color: var(--text);
-        font-family: var(--font-body);
-        font-size: var(--text-body);
-        line-height: 1.75;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-      }
-
-      h1,
-      h2,
-      h3 {
-        font-weight: 650;
-        letter-spacing: -0.045em;
-        line-height: 1.2;
-      }
-
-      h1 {
-        font-size: var(--heading-xl);
-      }
-
-      h2 {
-        font-size: var(--heading-lg);
-      }
-
-      h3 {
-        font-size: 1.25rem;
-      }
-
-      p {
-        text-wrap: pretty;
-      }
-
-      a {
-        text-underline-offset: 4px;
-      }
-
-      a:focus-visible,
-      button:focus-visible {
-        outline: 3px solid var(--accent);
-        outline-offset: 4px;
-        border-radius: 3px;
-      }
-
-      ::selection {
-        background: #ded3c5;
-        color: #252720;
-      }
-    }
-
-    @layer layout {
+    @media (max-width: 900px) {
       .container {
-        width: min(
-          var(--content-width),
-          calc(100% - var(--page-gutter) * 2)
-        );
-        margin-inline: auto;
-      }
-
-      .site-header {
-        position: sticky;
-        z-index: 10;
-        top: 0;
-        border-bottom: 1px solid var(--line);
-        background: color-mix(in srgb, var(--page) 94%, transparent);
-        backdrop-filter: blur(14px);
+        width: min(100% - 40px, var(--page-width));
       }
 
       .header-inner {
-        display: flex;
         min-height: 76px;
-        align-items: center;
-        justify-content: space-between;
-        gap: 28px;
+        gap: 16px;
+      }
+
+      .main-nav {
+        gap: 17px;
+      }
+
+      .main-nav a {
+        font-size: 16px;
       }
 
       .hero {
-        padding-block: clamp(56px, 9vw, 104px) clamp(48px, 7vw, 76px);
+        min-height: 460px;
       }
 
-      .hero-inner {
-        max-width: 830px;
+      .hero-content {
+        width: 70%;
       }
 
-      .section {
-        padding-block: clamp(48px, 7vw, 76px);
-        border-top: 1px solid var(--line);
+      .featured-grid {
+        gap: 15px;
       }
 
-      .footer-inner {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 32px;
+      .feature-content {
+        padding: 20px;
       }
 
-      @media (max-width: 680px) {
-        .header-inner {
-          min-height: auto;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 12px;
-          padding-block: 16px;
-        }
+      .feature-card,
+      .feature-content {
+        min-height: 340px;
+      }
 
-        .footer-inner {
-          flex-direction: column;
-          gap: 20px;
-        }
+      .feature-card h2 {
+        font-size: 24px;
+      }
+
+      .feature-card p:not(.card-label) {
+        font-size: 17px;
+      }
+
+      .latest-grid {
+        gap: 35px;
+      }
+
+      .latest-item {
+        grid-template-columns: 90px minmax(0, 1fr) 20px;
+        gap: 13px;
+      }
+
+      .latest-image {
+        width: 90px;
+        height: 90px;
+      }
+
+      .latest-item h3 {
+        font-size: 18px;
       }
     }
 
-    @layer components {
-      /* Brand and navigation */
+    @media (max-width: 640px) {
+      body {
+        font-size: 18px;
+      }
 
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 11px;
-        flex-shrink: 0;
+      .container {
+        width: calc(100% - 36px);
+      }
+
+      .header-inner {
+        min-height: auto;
+        padding-block: 15px 0;
+        flex-wrap: wrap;
+        gap: 12px;
       }
 
       .brand-icon {
-        display: grid;
-        width: 38px;
-        height: 38px;
-        place-items: center;
-        border: 1px solid var(--line);
-        border-radius: 50%;
-        background: var(--surface);
-        font-size: 19px;
+        width: 39px;
+        height: 39px;
+        font-size: 22px;
       }
 
       .brand-name {
-        display: block;
-        font-size: 17px;
-        font-weight: 750;
-        letter-spacing: -0.04em;
-        line-height: 1.3;
+        font-size: 18px;
       }
 
-      .brand-caption {
-        display: block;
-        margin-top: 3px;
-        color: var(--muted);
-        font-size: 11px;
-        letter-spacing: 0.025em;
-        line-height: 1.4;
+      .brand-tagline {
+        font-size: 15px;
       }
 
-      .nav {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 8px 26px;
+      .main-nav {
+        width: calc(100% + 36px);
+        margin-inline: -18px;
+        padding: 0 18px;
+        gap: 25px;
+        overflow-x: auto;
+        border-top: 1px solid var(--line);
+        scrollbar-width: none;
       }
 
-      .nav a {
-        color: var(--muted);
-        font-size: 14px;
-        font-weight: 550;
-        transition: color 160ms ease;
+      .main-nav::-webkit-scrollbar {
+        display: none;
       }
 
-      .nav a:hover,
-      .nav a[aria-current="page"] {
-        color: var(--accent);
+      .main-nav a {
+        padding-block: 13px;
+        font-size: 16px;
       }
 
-      /* Hero */
+      .hero {
+        min-height: 510px;
+        align-items: flex-end;
+      }
+
+      .hero::before {
+        background-image:
+          linear-gradient(
+            0deg,
+            rgba(249, 245, 237, 0.98) 0%,
+            rgba(249, 245, 237, 0.94) 40%,
+            rgba(249, 245, 237, 0.58) 68%,
+            rgba(249, 245, 237, 0.05) 100%
+          ),
+          url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1100&q=85");
+        background-position: center, center 35%;
+      }
+
+      .hero-content {
+        width: 100%;
+        padding-block: 190px 42px;
+      }
 
       .eyebrow {
-        margin-bottom: 15px;
-        color: var(--accent);
-        font-size: 12px;
-        font-weight: 750;
-        letter-spacing: 0.12em;
-        line-height: 1.5;
-        text-transform: uppercase;
+        margin-bottom: 13px;
+        font-size: 14px;
+        letter-spacing: 1.8px;
       }
 
       .hero h1 {
-        max-width: 780px;
-        text-wrap: balance;
+        font-size: clamp(42px, 11vw, 56px);
+        letter-spacing: -1.8px;
       }
 
       .hero-description {
-        max-width: 690px;
-        margin-top: 22px;
-        color: var(--muted);
-        font-size: clamp(18px, 1.5vw, 21px);
-        line-height: 1.8;
-      }
-
-      .hero-actions {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 16px 24px;
-        margin-top: 29px;
+        margin: 17px 0 23px;
+        font-size: 19px;
+        line-height: 1.65;
       }
 
       .button {
-        display: inline-flex;
-        min-height: 48px;
-        align-items: center;
-        justify-content: center;
-        padding: 11px 19px;
-        border: 1px solid var(--accent);
-        border-radius: var(--radius);
-        background: var(--accent);
-        color: white;
-        font-size: 14px;
-        font-weight: 650;
-        line-height: 1.5;
-        transition: background 160ms ease, border-color 160ms ease;
+        min-height: 52px;
+        padding: 12px 21px;
+        font-size: 17px;
       }
 
-      .button:hover {
-        border-color: var(--accent-hover);
-        background: var(--accent-hover);
+      .featured {
+        padding-block: 22px 45px;
       }
 
-      .text-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        color: var(--accent);
-        font-size: 14px;
-        font-weight: 650;
+      .featured-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
       }
 
-      .text-link .arrow {
-        transition: transform 160ms ease;
+      .feature-card,
+      .feature-content {
+        min-height: 310px;
       }
 
-      .text-link:hover .arrow {
-        transform: translateX(4px);
+      .feature-content {
+        padding: 25px;
       }
 
-      /* Main content */
+      .feature-card h2 {
+        max-width: 390px;
+        font-size: 28px;
+      }
+
+      .feature-card p:not(.card-label) {
+        max-width: 420px;
+        font-size: 18px;
+      }
+
+      .latest {
+        padding-block: 44px;
+      }
+
+      .latest-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
 
       .section-heading {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        gap: 24px;
-        margin-bottom: 25px;
+        font-size: 35px;
       }
 
-      .section-heading p {
-        max-width: 440px;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.7;
+      .section-description {
+        font-size: 18px;
       }
 
-      .section-heading h2 {
-        margin-top: 5px;
+      .latest-item {
+        grid-template-columns: 88px minmax(0, 1fr) 20px;
+        gap: 13px;
       }
 
-      .section-label {
-        color: var(--muted);
+      .latest-image {
+        width: 88px;
+        height: 88px;
+      }
+
+      .latest-item h3 {
+        font-size: 18px;
+      }
+
+      .latest-category {
         font-size: 12px;
-        font-weight: 750;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
       }
 
-      /* Guide list */
-
-      .guide-list {
-        border-top: 1px solid var(--line);
+      .tip-banner {
+        margin-bottom: 42px;
+        padding: 23px;
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 15px;
       }
 
-      .guide {
-        display: grid;
-        grid-template-columns: 42px minmax(0, 1fr) auto;
-        align-items: start;
-        gap: 20px;
-        padding: 25px 0;
-        border-bottom: 1px solid var(--line);
+      .tip-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 23px;
       }
 
-      .guide-number {
-        padding-top: 3px;
-        color: #85877e;
-        font-size: 13px;
-        font-weight: 650;
-        font-variant-numeric: tabular-nums;
+      .tip-banner h2 {
+        font-size: 23px;
       }
 
-      .guide h3 {
-        font-size: clamp(20px, 2vw, 24px);
-        letter-spacing: -0.035em;
+      .tip-banner p:not(.section-label) {
+        font-size: 17px;
       }
 
-      .guide h3 a {
-        transition: color 160ms ease;
+      .tip-banner .button {
+        grid-column: 1 / -1;
+        justify-self: start;
       }
 
-      .guide h3 a:hover {
-        color: var(--accent);
-      }
-
-      .guide-description {
-        max-width: 700px;
-        margin-top: 7px;
-        color: var(--muted);
-        font-size: 16px;
-        line-height: 1.75;
-      }
-
-      .guide-category {
-        display: inline-block;
-        margin-bottom: 6px;
-        color: var(--accent);
-        font-size: 11px;
-        font-weight: 750;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .guide-arrow {
-        padding-top: 6px;
-        color: var(--accent);
-        font-size: 19px;
-      }
-
-      /* Topic navigation */
-
-      .topic-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-      }
-
-      .topic {
-        min-height: 168px;
-        padding: 22px;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: var(--surface);
-        transition: border-color 160ms ease, transform 160ms ease;
-      }
-
-      .topic:hover {
-        transform: translateY(-2px);
-        border-color: #b6a18c;
-      }
-
-      .topic h3 {
-        font-size: 19px;
-      }
-
-      .topic p {
-        margin-top: 9px;
-        color: var(--muted);
-        font-size: 15px;
-        line-height: 1.7;
-      }
-
-      .topic .topic-link {
-        display: inline-block;
-        margin-top: 15px;
-        color: var(--accent);
-        font-size: 13px;
-        font-weight: 700;
-      }
-
-      /* Practical starting point */
-
-      .quick-tip {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(220px, 0.55fr);
-        gap: 35px;
-        align-items: center;
-        padding: clamp(23px, 4vw, 38px);
-        border-radius: var(--radius);
-        background: var(--surface-soft);
-      }
-
-      .quick-tip h2 {
-        max-width: 540px;
-      }
-
-      .quick-tip p {
-        margin-top: 12px;
-        color: var(--muted);
-        font-size: 16px;
-        line-height: 1.8;
-      }
-
-      .ratio {
-        padding: 22px;
-        border: 1px solid #d7d2c5;
-        border-radius: var(--radius);
-        background: var(--surface);
-        text-align: center;
-      }
-
-      .ratio-label {
-        color: var(--muted);
-        font-size: 11px;
-        font-weight: 750;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-      }
-
-      .ratio-value {
-        display: block;
-        margin-top: 5px;
-        color: var(--accent);
-        font-size: clamp(32px, 4vw, 43px);
-        font-weight: 750;
-        letter-spacing: -0.06em;
-        line-height: 1.3;
-      }
-
-      .ratio-note {
-        display: block;
-        margin-top: 5px;
-        color: var(--muted);
-        font-size: 13px;
-      }
-
-      /* Footer */
-
-      .site-footer {
-        padding-block: 30px;
-        border-top: 1px solid var(--line);
-      }
-
-      .footer-description {
-        max-width: 470px;
-        margin-top: 8px;
-        color: var(--muted);
-        font-size: 14px;
-        line-height: 1.7;
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
       }
 
       .footer-nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px 22px;
-      }
-
-      .footer-nav a {
-        color: var(--muted);
-        font-size: 13px;
-      }
-
-      .footer-nav a:hover {
-        color: var(--accent);
+        gap: 12px 22px;
       }
 
       .copyright {
-        margin-top: 24px;
-        padding-top: 16px;
-        border-top: 1px solid var(--line);
-        color: var(--muted);
-        font-size: 12px;
-      }
-
-      @media (max-width: 760px) {
-        .section-heading {
-          align-items: flex-start;
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .topic-grid {
-          grid-template-columns: 1fr;
-          gap: 12px;
-        }
-
-        .topic {
-          min-height: auto;
-          padding: 19px;
-        }
-
-        .quick-tip {
-          grid-template-columns: 1fr;
-          gap: 23px;
-        }
-
-        .ratio {
-          max-width: 360px;
-        }
-
-        .guide {
-          grid-template-columns: 27px minmax(0, 1fr) 15px;
-          gap: 12px;
-          padding: 21px 0;
-        }
-
-        .guide-description {
-          font-size: 15px;
-        }
-      }
-
-      @media (max-width: 420px) {
-        .nav {
-          gap: 8px 17px;
-        }
-
-        .nav a {
-          font-size: 13px;
-        }
-
-        .hero-actions {
-          align-items: flex-start;
-          flex-direction: column;
-        }
-
-        .guide {
-          grid-template-columns: 23px minmax(0, 1fr);
-        }
-
-        .guide-arrow {
-          display: none;
-        }
-      }
-    }
-
-    @layer utilities {
-      .muted {
-        color: var(--muted);
-      }
-
-      .skip-link {
-        position: absolute;
-        z-index: 100;
-        top: 8px;
-        left: 8px;
-        padding: 10px 14px;
-        transform: translateY(-150%);
-        border-radius: 4px;
-        background: var(--text);
-        color: white;
-      }
-
-      .skip-link:focus {
-        transform: translateY(0);
+        text-align: left;
       }
     }
 
@@ -639,26 +808,23 @@
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Coffee and Coffee Gear home">
+      <a class="brand" href="index.html" aria-label="Coffee and Coffee Gear homepage">
         <span class="brand-icon" aria-hidden="true">☕</span>
         <span>
-          <span class="brand-name">Coffee & Coffee Gear</span>
-          <span class="brand-caption">Practical guides for everyday coffee</span>
+          <span class="brand-name">Coffee &amp; Coffee Gear</span>
+          <span class="brand-tagline">Better Coffee. Simpler.</span>
         </span>
       </a>
 
-      <nav class="nav" aria-label="Main navigation">
+      <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html" aria-current="page">Home</a>
         <a href="how-to-make-pour-over-coffee.html">Brewing Guides</a>
         <a href="coffee-gear.html">Coffee Gear</a>
@@ -667,194 +833,180 @@
     </div>
   </header>
 
-  <main id="main">
-    <!-- Main introduction -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <p class="eyebrow">Your guide to better home coffee</p>
-
-        <h1>Better coffee, made simple.</h1>
-
-        <p class="hero-description">
-          Learn how to brew a better cup, choose useful coffee equipment,
-          and solve everyday brewing problems. Clear explanations, practical
-          advice, and no unnecessary complexity.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button" href="how-to-make-pour-over-coffee.html">
-            Start with a brewing guide
-          </a>
-          <a class="text-link" href="#guides">
-            Browse all guides <span class="arrow" aria-hidden="true">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Three main content guides -->
-    <section class="section" id="guides">
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
       <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="section-label">Start here</p>
-            <h2>Essential coffee guides</h2>
-          </div>
-          <p>
-            New to home brewing? These three guides cover the basics,
-            from making coffee to choosing equipment and fixing common problems.
+        <div class="hero-content">
+          <p class="eyebrow">Practical guides for better coffee</p>
+          <h1 id="hero-title">
+            Better Coffee
+            <span>Starts Here</span>
+          </h1>
+          <p class="hero-description">
+            Learn how to brew, choose the right gear, and solve common
+            coffee problems. Practical advice for your everyday cup.
           </p>
-        </div>
-
-        <div class="guide-list">
-          <article class="guide">
-            <span class="guide-number">01</span>
-            <div>
-              <span class="guide-category">Brewing Basics</span>
-              <h3>
-                <a href="how-to-make-pour-over-coffee.html">
-                  How to Make Pour-Over Coffee at Home
-                </a>
-              </h3>
-              <p class="guide-description">
-                Learn the basic brewing steps, coffee-to-water ratio,
-                grind size, and pouring technique.
-              </p>
-            </div>
-            <a class="guide-arrow" href="how-to-make-pour-over-coffee.html"
-               aria-label="Read the pour-over coffee guide">↗</a>
-          </article>
-
-          <article class="guide">
-            <span class="guide-number">02</span>
-            <div>
-              <span class="guide-category">Equipment & Buying Advice</span>
-              <h3>
-                <a href="coffee-gear.html">
-                  What Coffee Equipment Do You Actually Need?
-                </a>
-              </h3>
-              <p class="guide-description">
-                Understand the essentials, compare common tools, and decide
-                what is worth buying for your routine.
-              </p>
-            </div>
-            <a class="guide-arrow" href="coffee-gear.html"
-               aria-label="Read the coffee equipment guide">↗</a>
-          </article>
-
-          <article class="guide">
-            <span class="guide-number">03</span>
-            <div>
-              <span class="guide-category">Troubleshooting</span>
-              <h3>
-                <a href="coffee-tips.html">
-                  How to Improve the Taste of Your Coffee
-                </a>
-              </h3>
-              <p class="guide-description">
-                Explore practical ways to adjust freshness, water temperature,
-                grind size, and coffee ratios.
-              </p>
-            </div>
-            <a class="guide-arrow" href="coffee-tips.html"
-               aria-label="Read practical coffee tips">↗</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Topic navigation -->
-    <section class="section" id="topics">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="section-label">Explore by topic</p>
-            <h2>What do you want to learn?</h2>
-          </div>
-        </div>
-
-        <div class="topic-grid">
-          <a class="topic" href="how-to-make-pour-over-coffee.html">
-            <h3>Brewing Basics</h3>
-            <p>
-              Brewing methods, coffee ratios, water temperature,
-              and step-by-step instructions.
-            </p>
-            <span class="topic-link">Explore brewing →</span>
-          </a>
-
-          <a class="topic" href="coffee-gear.html">
-            <h3>Equipment & Tools</h3>
-            <p>
-              Coffee makers, grinders, drippers, and practical
-              equipment-buying advice.
-            </p>
-            <span class="topic-link">Explore equipment →</span>
-          </a>
-
-          <a class="topic" href="coffee-tips.html">
-            <h3>Everyday Coffee Tips</h3>
-            <p>
-              Bean storage, flavor troubleshooting, and small changes
-              that can improve your daily cup.
-            </p>
-            <span class="topic-link">Explore coffee tips →</span>
+          <a class="button" href="#featured-guides">
+            Explore Our Guides <span class="arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Useful information, not a decorative image section -->
-    <section class="section">
-      <div class="container">
-        <div class="quick-tip">
-          <div>
-            <p class="eyebrow">A practical starting point</p>
-            <h2>Keep your first brew simple.</h2>
-            <p>
-              Try 20 grams of coffee with 320 grams of water as a starting
-              point for pour-over brewing. Keep your other variables steady,
-              then adjust one thing at a time to discover what tastes best
-              to you.
-            </p>
-            <p>
-              This is a starting recipe, not a universal rule. Different beans,
-              roast levels, and brewing methods may call for different ratios.
-            </p>
+    <section class="featured" id="featured-guides" aria-label="Featured coffee guides">
+      <div class="container featured-grid">
+
+        <article class="feature-card">
+          <img
+            src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=900&q=85"
+            alt="Freshly brewed coffee prepared with a pour-over dripper"
+            width="900"
+            height="700"
+            fetchpriority="high"
+          >
+          <div class="feature-content">
+            <p class="card-label">Brewing Guides</p>
+            <h2>How to Make Pour-Over Coffee at Home</h2>
+            <p>Learn the basics of coffee ratios, grind size, and pouring technique.</p>
             <a class="text-link" href="how-to-make-pour-over-coffee.html">
-              Follow the full brewing guide
-              <span class="arrow" aria-hidden="true">→</span>
+              Read the guide <span aria-hidden="true">→</span>
             </a>
           </div>
+        </article>
 
-          <div class="ratio" aria-label="Starting coffee ratio: 1 to 16">
-            <span class="ratio-label">Starting ratio</span>
-            <strong class="ratio-value">1 : 16</strong>
-            <span class="ratio-note">20 g coffee · 320 g water</span>
+        <article class="feature-card">
+          <img
+            src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=85"
+            alt="Coffee brewing equipment arranged on a wooden table"
+            width="900"
+            height="700"
+            loading="lazy"
+          >
+          <div class="feature-content">
+            <p class="card-label">Coffee Gear</p>
+            <h2>What Coffee Equipment Do You Actually Need?</h2>
+            <p>Explore useful tools and find the right equipment for your routine.</p>
+            <a class="text-link" href="coffee-gear.html">
+              Read the guide <span aria-hidden="true">→</span>
+            </a>
           </div>
+        </article>
+
+        <article class="feature-card">
+          <img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85"
+            alt="A freshly prepared cup of coffee on a café table"
+            width="900"
+            height="700"
+            loading="lazy"
+          >
+          <div class="feature-content">
+            <p class="card-label">Coffee Tips</p>
+            <h2>How to Improve the Taste of Your Coffee</h2>
+            <p>Simple ways to improve freshness, water temperature, and flavor.</p>
+            <a class="text-link" href="coffee-tips.html">
+              Read the guide <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="latest" aria-labelledby="latest-title">
+      <div class="container latest-grid">
+        <div>
+          <p class="section-label">Latest Guides</p>
+          <h2 class="section-heading" id="latest-title">
+            Everything You Need for Better Coffee
+          </h2>
+          <p class="section-description">
+            From brewing basics to equipment advice, explore practical
+            guides that help you make better coffee at home.
+          </p>
+          <a class="button" href="how-to-make-pour-over-coffee.html">
+            Start Learning <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="latest-list">
+          <a class="latest-item" href="how-to-make-pour-over-coffee.html">
+            <div class="latest-image">
+              <img
+                src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=300&q=80"
+                alt=""
+                width="300"
+                height="250"
+                loading="lazy"
+              >
+            </div>
+            <div>
+              <p class="latest-category">Brewing Guides</p>
+              <h3>How to Make Pour-Over Coffee at Home</h3>
+            </div>
+            <span class="latest-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="latest-item" href="coffee-gear.html">
+            <div class="latest-image">
+              <img
+                src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=300&q=80"
+                alt=""
+                width="300"
+                height="250"
+                loading="lazy"
+              >
+            </div>
+            <div>
+              <p class="latest-category">Coffee Gear</p>
+              <h3>What Coffee Equipment Do You Actually Need?</h3>
+            </div>
+            <span class="latest-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a class="latest-item" href="coffee-tips.html">
+            <div class="latest-image">
+              <img
+                src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=300&q=80"
+                alt=""
+                width="300"
+                height="250"
+                loading="lazy"
+              >
+            </div>
+            <div>
+              <p class="latest-category">Coffee Tips</p>
+              <h3>How to Improve the Taste of Your Coffee</h3>
+            </div>
+            <span class="latest-arrow" aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
+    </section>
+
+    <section class="container tip-banner" aria-labelledby="beans-title">
+      <div class="tip-icon" aria-hidden="true">◉</div>
+      <div>
+        <p class="section-label">A good cup starts with good beans</p>
+        <h2 id="beans-title">Fresh Beans. Better Flavor.</h2>
+        <p>Learn how to store coffee beans and keep their flavor for longer.</p>
+      </div>
+      <a class="button button-outline" href="coffee-tips.html">
+        Learn More <span class="arrow" aria-hidden="true">→</span>
+      </a>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
-        <div>
-          <a class="brand" href="index.html">
-            <span class="brand-icon" aria-hidden="true">☕</span>
-            <span>
-              <span class="brand-name">Coffee & Coffee Gear</span>
-              <span class="brand-caption">Practical guides for everyday coffee</span>
-            </span>
-          </a>
-
-          <p class="footer-description">
-            Straightforward guides to brewing coffee at home,
-            choosing useful equipment, and improving every cup.
-          </p>
-        </div>
+        <a class="brand" href="index.html">
+          <span class="brand-icon" aria-hidden="true">☕</span>
+          <span>
+            <span class="brand-name">Coffee &amp; Coffee Gear</span>
+            <span class="brand-tagline">Better Coffee. Simpler.</span>
+          </span>
+        </a>
 
         <nav class="footer-nav" aria-label="Footer navigation">
           <a href="index.html">Home</a>
@@ -865,7 +1017,7 @@
       </div>
 
       <p class="copyright">
-        © 2026 Coffee & Coffee Gear. All rights reserved.
+        © 2026 Coffee &amp; Coffee Gear. All rights reserved.
       </p>
     </div>
   </footer>
