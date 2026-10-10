@@ -1,32 +1,969 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Coffee Tips | Coffee & Coffee Gear</title>
+  <title>Coffee Tips: Brewing, Storage & Better Flavor</title>
 
-  <meta name="description" content="Practical coffee tips for better brewing, storage, and everyday coffee preparation.">
+  <meta name="description" content="Discover practical coffee tips for storing beans, choosing water temperature, adjusting grind size, and improving your daily coffee brewing routine.">
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f7f3ec">
+
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://images.pexels.com">
+
+  <style>
+    :root {
+      --bg: #f7f3ec;
+      --surface: #fffdf9;
+      --text: #302820;
+      --muted: #766b60;
+      --brown: #76543b;
+      --brown-dark: #4a3528;
+      --line: #e8ded1;
+      --accent-bg: #eee4d7;
+      --max-width: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 30px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      background: #fffdf9;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      width: min(var(--max-width), calc(100% - 56px));
+      margin: 0 auto;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--brown-dark);
+      font-size: 23px;
+      font-weight: bold;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--brown);
+    }
+
+    .main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .main-nav a {
+      color: #5d5147;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .main-nav a:hover,
+    .main-nav a[aria-current="page"] {
+      color: #a06d43;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 56px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 15px;
+      color: #956b48;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      overflow-wrap: break-word;
+    }
+
+    .hero {
+      padding: 62px 0 58px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 52px;
+    }
+
+    h1 {
+      margin: 0 0 22px;
+      color: var(--brown-dark);
+      font-size: clamp(43px, 5vw, 66px);
+      font-weight: 500;
+      letter-spacing: -2px;
+      line-height: 1.12;
+    }
+
+    .hero-description {
+      max-width: 490px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    .primary-link {
+      display: inline-block;
+      padding: 12px 23px;
+      background: var(--brown-dark);
+      border: 1px solid var(--brown-dark);
+      border-radius: 3px;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .primary-link:hover {
+      background: #76543b;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 435px;
+      border-radius: 5px;
+      object-fit: cover;
+      object-position: center;
+      background: #e8ded1;
+    }
+
+    .image-caption {
+      margin: 10px 0 0;
+      color: #85786b;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .quick-nav {
+      padding: 25px 0;
+      background: var(--accent-bg);
+      border-top: 1px solid #e6d8c7;
+      border-bottom: 1px solid #e6d8c7;
+    }
+
+    .quick-nav-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .quick-nav-label {
+      color: var(--brown-dark);
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .quick-links a {
+      padding: 7px 13px;
+      border: 1px solid #d7c5b2;
+      border-radius: 3px;
+      color: #66513f;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .quick-links a:hover {
+      background: #fffdf9;
+    }
+
+    .section {
+      padding: 74px 0;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 34px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 12px;
+      color: var(--brown-dark);
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 500;
+      letter-spacing: -1px;
+      line-height: 1.25;
+    }
+
+    .section-heading > p:last-child {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .tip-card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+    }
+
+    .tip-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      object-position: center;
+      background: #e8ded1;
+    }
+
+    .tip-content {
+      padding: 27px 27px 29px;
+    }
+
+    .tip-number {
+      margin: 0 0 7px;
+      color: #9a714d;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .tip-content h3 {
+      margin: 0 0 12px;
+      color: var(--brown-dark);
+      font-size: 27px;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .tip-content p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .tip-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .tip-content strong {
+      color: var(--brown-dark);
+    }
+
+    .feature-section {
+      padding: 65px 0;
+      background: #eee4d7;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .feature-image {
+      width: 100%;
+      height: 390px;
+      border-radius: 5px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .feature-copy h2 {
+      margin: 0 0 17px;
+      color: var(--brown-dark);
+      font-size: clamp(32px, 4vw, 43px);
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .feature-copy > p:not(.eyebrow) {
+      color: #716458;
+      font-size: 17px;
+    }
+
+    .ratio-example {
+      margin-top: 25px;
+      padding: 20px 22px;
+      background: #fffaf3;
+      border-left: 3px solid #a67b53;
+    }
+
+    .ratio-example strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--brown-dark);
+      font-size: 18px;
+    }
+
+    .ratio-example span {
+      color: #716458;
+      font-size: 15px;
+    }
+
+    .mistakes-section {
+      padding: 74px 0;
+    }
+
+    .mistakes-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .mistake-item {
+      padding: 25px 22px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+    }
+
+    .mistake-item h3 {
+      margin: 0 0 9px;
+      color: var(--brown-dark);
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .mistake-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .related-section {
+      padding: 60px 0;
+      background: #fffdf9;
+      border-top: 1px solid var(--line);
+    }
+
+    .related-section h2 {
+      margin: 0 0 22px;
+      color: var(--brown-dark);
+      font-size: 34px;
+      font-weight: 500;
+    }
+
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .related-link {
+      display: block;
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      text-decoration: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .related-link:hover {
+      border-color: #b99a7c;
+    }
+
+    .related-link strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--brown-dark);
+      font-size: 19px;
+    }
+
+    .related-link span {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .site-footer {
+      padding: 28px 0;
+      background: #302820;
+      color: #e8ded1;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-inner p {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-nav a {
+      color: #e8ded1;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 850px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .main-nav {
+        gap: 16px;
+      }
+
+      .hero-grid,
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero {
+        padding-top: 44px;
+      }
+
+      .hero-image {
+        height: 380px;
+      }
+
+      .feature-image {
+        height: 340px;
+      }
+
+      .mistakes-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        font-size: 17px;
+      }
+
+      .container,
+      .header-inner {
+        width: calc(100% - 36px);
+      }
+
+      .header-inner {
+        padding: 17px 0;
+      }
+
+      .brand {
+        font-size: 21px;
+      }
+
+      .main-nav {
+        gap: 10px 16px;
+      }
+
+      .main-nav a {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 37px 0 42px;
+      }
+
+      h1 {
+        font-size: 43px;
+        letter-spacing: -1.4px;
+      }
+
+      .hero-description {
+        font-size: 17px;
+      }
+
+      .hero-image {
+        height: 270px;
+      }
+
+      .quick-nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .quick-links {
+        gap: 9px;
+      }
+
+      .section,
+      .mistakes-section {
+        padding: 52px 0;
+      }
+
+      .section-heading h2 {
+        font-size: 33px;
+      }
+
+      .tips-grid,
+      .related-links {
+        grid-template-columns: 1fr;
+      }
+
+      .tip-image {
+        height: 245px;
+      }
+
+      .tip-content {
+        padding: 23px 21px 25px;
+      }
+
+      .tip-content h3 {
+        font-size: 25px;
+      }
+
+      .feature-section {
+        padding: 45px 0;
+      }
+
+      .feature-image {
+        height: 265px;
+      }
+
+      .feature-copy h2 {
+        font-size: 33px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>Coffee Tips</h1>
+<header class="site-header">
+  <div class="header-inner">
 
-  <p>Simple tips to help you make better coffee every day.</p>
+    <a class="brand" href="index.html">
+      Coffee <span>&</span> Coffee Gear
+    </a>
 
-  <h2>Coffee Storage</h2>
-  <p>Learn how to store coffee beans properly.</p>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="how-to-make-pour-over-coffee.html">Coffee Guides</a>
+      <a href="coffee-gear.html">Coffee Gear</a>
+      <a href="coffee-tips.html" aria-current="page">Coffee Tips</a>
+    </nav>
 
-  <h2>Brewing Temperature</h2>
-  <p>Understand why water temperature matters when brewing coffee.</p>
+  </div>
+</header>
 
-  <h2>Coffee Preparation</h2>
-  <p>Discover simple ways to improve your daily coffee routine.</p>
+<main>
 
-  <p>
-    <a href="index.html">← Back to Home</a>
-  </p>
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <p class="eyebrow">Small Changes, Better Coffee</p>
+
+        <h1>Better Coffee Starts with Better Habits</h1>
+
+        <p class="hero-description">
+          You do not need expensive equipment to improve your coffee.
+          Learn how to store beans, adjust your brewing method, and build
+          a daily routine that brings out more flavor in every cup.
+        </p>
+
+        <a class="primary-link" href="#essential-tips">
+          Explore Coffee Tips
+        </a>
+      </div>
+
+      <div>
+        <img
+          class="hero-image"
+          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1500&q=85"
+          alt="Freshly prepared coffee on a wooden table in a warm cafe setting"
+          fetchpriority="high"
+          width="1500"
+          height="1000"
+        >
+
+        <p class="image-caption">
+          A few thoughtful habits can make your daily coffee more enjoyable.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="quick-nav" aria-label="Jump to a coffee tip">
+    <div class="container quick-nav-inner">
+
+      <span class="quick-nav-label">Explore the essentials</span>
+
+      <nav class="quick-links" aria-label="Coffee tips categories">
+        <a href="#storage">Bean Storage</a>
+        <a href="#temperature">Water Temperature</a>
+        <a href="#grind-size">Grind Size</a>
+        <a href="#coffee-ratio">Coffee Ratio</a>
+      </nav>
+
+    </div>
+  </section>
+
+  <section class="section" id="essential-tips">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="eyebrow">The Everyday Guide</p>
+
+        <h2>Four Essentials for Better Coffee</h2>
+
+        <p>
+          Start with these basics before changing your equipment.
+          Small adjustments to storage and brewing can help you get
+          more consistent results.
+        </p>
+      </div>
+
+      <div class="tips-grid">
+
+        <article class="tip-card" id="storage">
+          <img
+            class="tip-image"
+            src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&q=85"
+            alt="Roasted coffee beans ready for brewing"
+            loading="lazy"
+            width="1200"
+            height="800"
+          >
+
+          <div class="tip-content">
+            <p class="tip-number">Tip 01 · Freshness</p>
+
+            <h3>Store Coffee Beans Properly</h3>
+
+            <p>
+              Coffee gradually loses its freshness when exposed to air,
+              heat, light, and moisture. Keep your beans in an
+              <strong>airtight container in a cool, dry cupboard</strong>,
+              away from direct sunlight.
+            </p>
+
+            <p>
+              Buy an amount you can reasonably use while the coffee is
+              still fresh, and avoid leaving the bag open on the counter.
+            </p>
+          </div>
+        </article>
+
+        <article class="tip-card" id="temperature">
+          <img
+            class="tip-image"
+            src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1200&q=85"
+            alt="Hot coffee being prepared with a kettle and brewing equipment"
+            loading="lazy"
+            width="1200"
+            height="800"
+          >
+
+          <div class="tip-content">
+            <p class="tip-number">Tip 02 · Water</p>
+
+            <h3>Pay Attention to Water Temperature</h3>
+
+            <p>
+              Water temperature influences how quickly flavor compounds
+              dissolve from ground coffee. For many pour-over recipes,
+              a useful starting range is around
+              <strong>90–96°C (194–205°F)</strong>.
+            </p>
+
+            <p>
+              Lighter roasts may benefit from hotter water, while darker
+              roasts can sometimes taste better at a slightly lower
+              temperature. Adjust to taste rather than treating one
+              number as a strict rule.
+            </p>
+          </div>
+        </article>
+
+        <article class="tip-card" id="grind-size">
+          <img
+            class="tip-image"
+            src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?auto=format&fit=crop&w=1200&q=85"
+            alt="Coffee grounds and brewing tools on a preparation surface"
+            loading="lazy"
+            width="1200"
+            height="800"
+          >
+
+          <div class="tip-content">
+            <p class="tip-number">Tip 03 · Grinding</p>
+
+            <h3>Adjust Your Grind Size</h3>
+
+            <p>
+              Grind size affects how quickly water flows through coffee
+              and how much flavor is extracted. A finer grind generally
+              extracts more quickly, while a coarser grind slows extraction.
+            </p>
+
+            <p>
+              If your coffee tastes harsh or bitter, try a slightly coarser
+              grind. If it tastes thin or sharply sour, try a slightly
+              finer grind and compare the result.
+            </p>
+          </div>
+        </article>
+
+        <article class="tip-card" id="coffee-ratio">
+          <img
+            class="tip-image"
+            src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Freshly brewed black coffee in a cup"
+            loading="lazy"
+            width="1200"
+            height="800"
+          >
+
+          <div class="tip-content">
+            <p class="tip-number">Tip 04 · Measurement</p>
+
+            <h3>Find a Consistent Coffee-to-Water Ratio</h3>
+
+            <p>
+              Measuring coffee and water makes it easier to repeat a
+              recipe. For pour-over coffee, try starting with
+              <strong>1 gram of coffee for every 15–17 grams of water</strong>.
+            </p>
+
+            <p>
+              Use a kitchen scale if possible. Once you find a ratio you
+              enjoy, keep it consistent while adjusting one other variable
+              at a time.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-section">
+    <div class="container feature-grid">
+
+      <div>
+        <img
+          class="feature-image"
+          src="https://images.pexels.com/photos/4820658/pexels-photo-4820658.jpeg?auto=compress&cs=tinysrgb&w=1400"
+          alt="Pour-over coffee being brewed slowly into a glass carafe"
+          loading="lazy"
+          width="1400"
+          height="1000"
+        >
+      </div>
+
+      <div class="feature-copy">
+        <p class="eyebrow">A Simple Starting Point</p>
+
+        <h2>Make Your Brewing Routine More Consistent</h2>
+
+        <p>
+          When a cup of coffee does not taste right, changing everything
+          at once makes it difficult to understand the cause. Start with
+          a repeatable recipe, then adjust one variable at a time.
+        </p>
+
+        <p>
+          Keep track of your coffee dose, water amount, grind setting,
+          and approximate brewing time. These details help you compare
+          one cup with the next.
+        </p>
+
+        <div class="ratio-example">
+          <strong>A simple pour-over recipe</strong>
+          <span>
+            20 g coffee · 320 g water · approximately 1:16 ratio
+          </span>
+        </div>
+
+        <p>
+          Treat this as a starting point, not a fixed rule. Your coffee,
+          dripper, and personal taste may call for adjustments.
+        </p>
+
+        <a class="primary-link" href="how-to-make-pour-over-coffee.html">
+          Read the Full Brewing Guide
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="mistakes-section">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="eyebrow">Troubleshooting</p>
+
+        <h2>Common Coffee Problems</h2>
+
+        <p>
+          Before replacing your equipment, try identifying what might
+          be affecting the flavor of your coffee.
+        </p>
+      </div>
+
+      <div class="mistakes-list">
+
+        <article class="mistake-item">
+          <h3>Coffee Tastes Too Bitter</h3>
+
+          <p>
+            Try a coarser grind, slightly cooler water, or a shorter
+            extraction time. Change one variable at a time so you can
+            tell what improves the flavor.
+          </p>
+        </article>
+
+        <article class="mistake-item">
+          <h3>Coffee Tastes Too Sour</h3>
+
+          <p>
+            Try a finer grind or slightly hotter water. Check that your
+            brewing process allows the water to contact the grounds evenly.
+          </p>
+        </article>
+
+        <article class="mistake-item">
+          <h3>Coffee Tastes Weak</h3>
+
+          <p>
+            Check your coffee-to-water ratio first. Try using a little
+            more coffee or slightly less water before changing several
+            other parts of the recipe.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="related-section">
+    <div class="container">
+
+      <p class="eyebrow">Keep Exploring</p>
+
+      <h2>More Coffee Guides</h2>
+
+      <div class="related-links">
+
+        <a class="related-link" href="how-to-make-pour-over-coffee.html">
+          <strong>How to Make Pour-Over Coffee</strong>
+          <span>Learn the brewing process step by step →</span>
+        </a>
+
+        <a class="related-link" href="coffee-gear.html">
+          <strong>Coffee Gear Guide</strong>
+          <span>Explore mugs, grinders, and brewing equipment →</span>
+        </a>
+
+        <a class="related-link" href="index.html">
+          <strong>Coffee & Coffee Gear Home</strong>
+          <span>Browse the main coffee guides and topics →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <p>© 2026 Coffee & Coffee Gear. Made for everyday coffee lovers.</p>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="how-to-make-pour-over-coffee.html">Coffee Guides</a>
+      <a href="coffee-gear.html">Coffee Gear</a>
+    </nav>
+
+  </div>
+</footer>
 
 </body>
 </html>
+```
