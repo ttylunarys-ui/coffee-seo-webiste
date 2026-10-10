@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,76 +6,846 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Coffee Gear Guide | Mugs, Grinders & Coffee Makers</title>
+  <title>Coffee Gear Guide: Mugs, Grinders & Coffee Makers</title>
 
-  <meta name="description" content="Explore practical coffee gear guides for beginners, including coffee mugs, grinders, and coffee makers.">
+  <meta name="description" content="Find the right coffee gear for your daily routine. Explore beginner-friendly guides to coffee mugs, burr grinders, pour-over drippers, and coffee makers.">
+
+  <meta name="robots" content="index, follow">
+
+  <meta name="theme-color" content="#f7f3ec">
+
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://images.pexels.com">
+
+  <style>
+    :root {
+      --bg: #f7f3ec;
+      --surface: #fffdf9;
+      --text: #302820;
+      --muted: #766b60;
+      --brown: #76543b;
+      --brown-dark: #4a3528;
+      --line: #e8ded1;
+      --accent: #d8b995;
+      --max-width: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      background: rgba(255, 253, 249, 0.96);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 20px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--brown-dark);
+      font-size: 23px;
+      font-weight: bold;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--brown);
+    }
+
+    .main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #5d5147;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a[aria-current="page"] {
+      color: #a06d43;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 56px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 64px 0 58px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      align-items: center;
+      gap: 52px;
+    }
+
+    .eyebrow {
+      margin: 0 0 15px;
+      color: #956b48;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      overflow-wrap: break-word;
+    }
+
+    h1 {
+      max-width: 560px;
+      margin: 0 0 22px;
+      color: var(--brown-dark);
+      font-size: clamp(42px, 5vw, 66px);
+      font-weight: 500;
+      letter-spacing: -2px;
+      line-height: 1.12;
+    }
+
+    .hero-description {
+      max-width: 490px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.85;
+    }
+
+    .primary-link {
+      display: inline-block;
+      padding: 12px 23px;
+      background: var(--brown-dark);
+      border: 1px solid var(--brown-dark);
+      border-radius: 3px;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .primary-link:hover {
+      background: #76543b;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 5px;
+    }
+
+    .image-caption {
+      margin: 10px 0 0;
+      color: #85786b;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .intro-strip {
+      padding: 27px 0;
+      background: #eee4d7;
+      border-top: 1px solid #e6d8c7;
+      border-bottom: 1px solid #e6d8c7;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .intro-item {
+      padding-right: 24px;
+      border-right: 1px solid #d9c9b7;
+    }
+
+    .intro-item:last-child {
+      border-right: none;
+    }
+
+    .intro-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--brown-dark);
+      font-size: 18px;
+    }
+
+    .intro-item span {
+      color: #716458;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .section {
+      padding: 76px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 34px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 12px;
+      color: var(--brown-dark);
+      font-size: clamp(31px, 4vw, 43px);
+      font-weight: 500;
+      letter-spacing: -1px;
+      line-height: 1.25;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .gear-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .gear-card {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .gear-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(65, 44, 27, 0.08);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 245px;
+      object-fit: cover;
+      object-position: center;
+      background: #e8ded1;
+    }
+
+    .card-content {
+      padding: 25px 23px 27px;
+    }
+
+    .card-label {
+      margin: 0 0 9px;
+      color: #9a714d;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .card-content h3 {
+      margin: 0 0 12px;
+      color: var(--brown-dark);
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .card-content > p:not(.card-label) {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .text-link {
+      display: inline-block;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #b99a7c;
+      color: #795436;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .text-link:hover {
+      color: #a16d43;
+      border-color: #a16d43;
+    }
+
+    .buying-guide {
+      padding: 64px 0;
+      background: #eae0d3;
+    }
+
+    .buying-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .buying-grid h2 {
+      margin: 0 0 15px;
+      color: var(--brown-dark);
+      font-size: 37px;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .buying-grid > div:first-child p {
+      margin: 0;
+      color: #716458;
+      font-size: 17px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 19px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      padding-left: 27px;
+      position: relative;
+      color: #65584c;
+      font-size: 16px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #876143;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    .check-list strong {
+      color: var(--brown-dark);
+    }
+
+    .bottom-cta {
+      padding: 65px 0;
+      text-align: center;
+    }
+
+    .bottom-cta h2 {
+      margin: 0 0 13px;
+      color: var(--brown-dark);
+      font-size: clamp(30px, 4vw, 42px);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .bottom-cta p {
+      max-width: 610px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .site-footer {
+      padding: 28px 0;
+      background: #302820;
+      color: #e8ded1;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-inner p {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-nav a {
+      color: #e8ded1;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 850px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .main-nav {
+        gap: 16px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero {
+        padding-top: 45px;
+      }
+
+      .hero-image {
+        height: 380px;
+      }
+
+      .gear-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gear-card:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .gear-card:last-child .card-image {
+        height: 300px;
+      }
+
+      .buying-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        font-size: 17px;
+      }
+
+      .container {
+        width: calc(100% - 36px);
+      }
+
+      .header-inner {
+        padding: 17px 18px;
+      }
+
+      .brand {
+        font-size: 21px;
+      }
+
+      .main-nav {
+        gap: 10px 16px;
+      }
+
+      .main-nav a {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 38px 0 42px;
+      }
+
+      h1 {
+        font-size: 43px;
+        letter-spacing: -1.4px;
+      }
+
+      .hero-description {
+        font-size: 17px;
+      }
+
+      .hero-image {
+        height: 275px;
+      }
+
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .intro-item {
+        padding: 0 0 16px;
+        border-right: none;
+        border-bottom: 1px solid #d9c9b7;
+      }
+
+      .intro-item:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .section {
+        padding: 52px 0;
+      }
+
+      .section-heading h2 {
+        font-size: 33px;
+      }
+
+      .gear-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .gear-card:last-child {
+        grid-column: auto;
+      }
+
+      .card-image,
+      .gear-card:last-child .card-image {
+        height: 250px;
+      }
+
+      .card-content {
+        padding: 22px 20px 25px;
+      }
+
+      .buying-guide {
+        padding: 46px 0;
+      }
+
+      .buying-grid h2 {
+        font-size: 32px;
+      }
+
+      .bottom-cta {
+        padding: 48px 0;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Coffee Gear</h1>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      Coffee <span>&</span> Coffee Gear
+    </a>
 
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="how-to-make-pour-over-coffee.html">Coffee Guides</a> |
-    <a href="coffee-gear.html">Coffee Gear</a> |
-    <a href="coffee-tips.html">Coffee Tips</a>
-  </nav>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="how-to-make-pour-over-coffee.html">Coffee Guides</a>
+      <a href="coffee-gear.html" aria-current="page">Coffee Gear</a>
+      <a href="coffee-tips.html">Coffee Tips</a>
+    </nav>
+  </div>
 </header>
 
 <main>
 
-  <p>
-    Choosing coffee equipment can be confusing for beginners.
-    Our guides focus on practical features, everyday use, and
-    simple buying advice.
-  </p>
+  <section class="hero">
+    <div class="container hero-grid">
 
-  <h2>Coffee Mugs</h2>
+      <div class="hero-copy">
+        <p class="eyebrow">The Everyday Coffee Edit</p>
 
-  <p>
-    Learn how to choose a coffee mug based on material, size,
-    lid design, heat retention, and everyday use.
-  </p>
+        <h1>Find the Right Gear for Your Coffee Ritual</h1>
 
-  <h3>Recommended Guide</h3>
+        <p class="hero-description">
+          Great coffee starts with the right tools. Explore practical,
+          beginner-friendly guides to coffee mugs, grinders, and brewing
+          equipment—and discover what really matters before you buy.
+        </p>
 
-  <p>
-    <a href="#">
-      Best Coffee Mugs for Office Use
-    </a>
-  </p>
+        <a class="primary-link" href="#explore-gear">
+          Explore Coffee Gear
+        </a>
+      </div>
 
+      <div class="hero-image-wrap">
+        <img
+          class="hero-image"
+          src="https://images.unsplash.com/photo-1748895177768-b4a54b9c2954?auto=format&fit=crop&w=1600&q=85"
+          alt="Pour-over coffee equipment arranged on a warm wooden table"
+          fetchpriority="high"
+          width="1600"
+          height="1000"
+        >
 
-  <h2>Coffee Grinders</h2>
+        <p class="image-caption">
+          Simple tools, thoughtful brewing, and better everyday coffee.
+        </p>
+      </div>
 
-  <p>
-    Coffee grinders can affect extraction and flavor.
-    Learn about grind size, burr grinders, and basic grinder features.
-  </p>
+    </div>
+  </section>
 
-  <h3>Recommended Guide</h3>
+  <section class="intro-strip" aria-label="What you will find">
+    <div class="container intro-grid">
 
-  <p>
-    <a href="#">
-      Coffee Grinder Guide for Beginners
-    </a>
-  </p>
+      <div class="intro-item">
+        <strong>Beginner-Friendly</strong>
+        <span>Clear explanations without unnecessary technical jargon.</span>
+      </div>
 
+      <div class="intro-item">
+        <strong>Practical Advice</strong>
+        <span>Focus on features that make a difference in everyday use.</span>
+      </div>
 
-  <h2>Coffee Makers</h2>
+      <div class="intro-item">
+        <strong>Thoughtful Choices</strong>
+        <span>Understand your options before spending money on equipment.</span>
+      </div>
 
-  <p>
-    Explore different brewing equipment and learn which type
-    may be suitable for your coffee routine.
-  </p>
+    </div>
+  </section>
+
+  <section class="section" id="explore-gear">
+    <div class="container">
+
+      <div class="section-heading">
+        <p class="eyebrow">Explore the Essentials</p>
+
+        <h2>Build Your Coffee Setup</h2>
+
+        <p>
+          You do not need a kitchen full of expensive equipment to make
+          enjoyable coffee. Start with the essentials that suit your taste,
+          routine, and budget.
+        </p>
+      </div>
+
+      <div class="gear-grid">
+
+        <article class="gear-card">
+          <img
+            class="card-image"
+            src="https://images.pexels.com/photos/32391688/pexels-photo-32391688/free-photo-of-home-brewing-setup-with-v60-coffee-dripper.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Home coffee brewing setup with a dripper, kettle, and grinder"
+            loading="lazy"
+            width="1200"
+            height="800"
+          >
+
+          <div class="card-content">
+            <p class="card-label">For Everyday Sipping</p>
+
+            <h3>Coffee Mugs</h3>
+
+            <p>
+              Compare ceramic, glass, and insulated mugs. Learn how capacity,
+              handle design, and heat retention affect your daily coffee
+              experience.
+            </p>
+
+            <a class="text-link" href="#mug-guide">
+              What to Look For
+            </a>
+          </div>
+        </article>
+
+        <article class="gear-card">
+          <img
+            class="card-image"
+            src="https://images.pexels.com/photos/29619139/pexels-photo-29619139/free-photo-of-specialty-coffee-brewing-with-v60-dripper.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Pour-over coffee dripper, glass carafe, and brewing scale"
+            loading="lazy"
+            width="1200"
+            height="800"
+          >
+
+          <div class="card-content">
+            <p class="card-label">For Better Flavor</p>
+
+            <h3>Coffee Grinders</h3>
+
+            <p>
+              Understand burr grinders, grind consistency, and grind size.
+              Discover why freshly ground coffee can make a difference to
+              your brew.
+            </p>
+
+            <a class="text-link" href="#grinder-guide">
+              Understand Grinders
+            </a>
+          </div>
+        </article>
+
+        <article class="gear-card">
+          <img
+            class="card-image"
+            src="https://images.unsplash.com/photo-1748895177768-b4a54b9c2954?auto=format&fit=crop&w=1200&q=85"
+            alt="Pour-over coffee maker, glass server, kettle, and coffee beans"
+            loading="lazy"
+            width="1200"
+            height="800"
+          >
+
+          <div class="card-content">
+            <p class="card-label">For Home Brewing</p>
+
+            <h3>Coffee Makers</h3>
+
+            <p>
+              Explore pour-over drippers, French presses, and automatic
+              coffee makers. Find a brewing method that matches your time
+              and preferred flavor.
+            </p>
+
+            <a class="text-link" href="how-to-make-pour-over-coffee.html">
+              Read the Pour-Over Guide
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="buying-guide">
+    <div class="container buying-grid">
+
+      <div>
+        <p class="eyebrow">Before You Buy</p>
+
+        <h2>Choose What Works for You</h2>
+
+        <p>
+          The best coffee gear is not necessarily the most expensive.
+          Think about how you brew, how often you make coffee, and how much
+          maintenance you are comfortable with.
+        </p>
+      </div>
+
+      <div>
+        <ul class="check-list">
+
+          <li>
+            <strong>Your brewing routine:</strong>
+            Choose equipment that fits the amount of time you have each day.
+          </li>
+
+          <li>
+            <strong>Your budget:</strong>
+            Prioritize useful features instead of paying for extras you
+            may never use.
+          </li>
+
+          <li>
+            <strong>Ease of cleaning:</strong>
+            Removable parts and simple designs can make daily maintenance
+            much easier.
+          </li>
+
+          <li>
+            <strong>Consistency:</strong>
+            For grinders and brewers, look for features that help you
+            repeat a recipe and get similar results.
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bottom-cta">
+    <div class="container">
+
+      <p class="eyebrow">Start Brewing</p>
+
+      <h2>Make More of Your Daily Coffee</h2>
+
+      <p>
+        New to pour-over coffee? Start with a simple brewing guide and learn
+        how to use your equipment with confidence.
+      </p>
+
+      <a class="primary-link" href="how-to-make-pour-over-coffee.html">
+        Learn How to Make Pour-Over Coffee
+      </a>
+
+    </div>
+  </section>
 
 </main>
 
-<footer>
-  <p>© 2026 Coffee & Coffee Gear</p>
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <p>© 2026 Coffee & Coffee Gear. Made for everyday coffee lovers.</p>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="how-to-make-pour-over-coffee.html">Coffee Guides</a>
+      <a href="coffee-tips.html">Coffee Tips</a>
+    </nav>
+
+  </div>
 </footer>
 
 </body>
 </html>
+```
